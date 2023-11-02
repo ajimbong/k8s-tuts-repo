@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: abbreve
-  tier: frontend
-  environment: deployment
+  # tier: frontend
+  # environment: deployment
 spec:
   replicas: 1
   strategy:

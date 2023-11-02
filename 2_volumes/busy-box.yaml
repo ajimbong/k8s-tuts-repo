@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: init
+spec:
+  selector:
+    matchLabels:
+      app: init
+  template:
+    metadata:
+      labels:
+        app: init
+    spec:
+      volumes:
+        - name: mypvc
+          persistentVolumeClaim:
+            claimName: mypvc
+      containers:
+      - name: init
+        image: busybox
+        # you can add your custom command
+        # command: ["/bin/chmod","-R","777", "/data"]
+        args:
+          - "sleep"
+          - "infinity"
+        volumeMounts:
+          - mountPath: /data
+            name: mypvc
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

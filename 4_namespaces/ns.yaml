@@ -1,0 +1,6 @@
+# create a namespace
+# imperatively:
+
+# kubectl create ns prod
+
+# kubectl config set-context --current --namespace=prod

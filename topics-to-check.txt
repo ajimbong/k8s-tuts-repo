@@ -1,0 +1,20 @@
+Advanced Scheduling in Kubernetes
+    nodeNames
+    nodeSelectors
+    Taints
+    Tolerations
+    nodeAffinity
+    podAffinity
+
+Ingress
+    TLS/SSl 
+
+RBAC(Role Based Access Control)
+
+Monitoring
+
+Resource Management
+    Requests
+    Limits
+    Limt Range
+    Resource Quotas

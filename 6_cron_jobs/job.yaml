@@ -1,0 +1,19 @@
+# jobs are processes you want to 
+# run once, and not always keep
+# them running. This could be for
+# Database backups etc
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-backup-job
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: dbbackup
+        image: busybox
+        command: ["/bin/sh", "-c"]
+        args: ["echo", "performing backups", "&&", "sleep", "20"]
+      restartPolicy: Never
